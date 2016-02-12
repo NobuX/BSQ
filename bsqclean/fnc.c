@@ -6,7 +6,7 @@
 /*   By: pcarre <pcarre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/11 18:36:53 by pcarre            #+#    #+#             */
-/*   Updated: 2016/02/11 18:42:51 by pcarre           ###   ########.fr       */
+/*   Updated: 2016/02/12 10:20:43 by pcarre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,15 +71,21 @@ int		first_line(int fd, unsigned int *first, char *tmp, t_max *max)
 				size_max = save_max(max, i, 1, 1);
 		}
 		else if (tmp[i] != max->charfull)
+		{
+			ft_putstr("error first_line if tmp[i] != max->charfull\n");
 			return (-1);
+		}
 		i = i + 1;
 	}
 	if (tmp[i] == 0)
+	{
+		ft_putstr("error first_line if tmp[i] == 0\n");
 		return (-1);
+	}
 	return (0);
 }
 
-int		first_car(char *tmp, unsigned int *ptr2, t_max *max, int line)
+int		first_char(char *tmp, unsigned int *ptr2, t_max *max, int line)
 {
 	ptr2[0] = 0;
 	if (tmp[0] == max->charempty)
