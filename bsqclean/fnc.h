@@ -6,7 +6,7 @@
 /*   By: mlegeay <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/09/24 13:15:02 by mlegeay           #+#    #+#             */
-/*   Updated: 2016/02/11 18:51:34 by pcarre           ###   ########.fr       */
+/*   Updated: 2016/02/12 11:42:56 by pcarre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,13 @@ void			ft_swap(unsigned int **ptr1, unsigned int **ptr2);
 int				save_max(t_max *max, int i, int line, int current);
 int				ft_atoi(char *str);
 int				first_line(int fd, unsigned int *first, char *tmp, t_max *max);
-int				first_car(char *tmp, unsigned int *ptr2, t_max *max, int line);
+int				first_char(char *tmp, unsigned int *ptr2, t_max *max, int line);
 
 /*	option.c	*/
-int				nbr_line(int *fd, char *file, t_max *max);
+void			init_chars(int *fd, t_max *max);
 int				nbr_col(char *file);
+int				nbr_lines(char *file);
+void			ft_putstr(char *str);
 
 /*	display.c	*/
 void			free_ptr(unsigned int **ptr1, unsigned int **ptr2, char **tmp);
